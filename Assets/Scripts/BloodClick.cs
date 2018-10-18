@@ -17,6 +17,7 @@ public class BloodClick : MonoBehaviour
 
     // Use this for initialization
     void Start () {
+        currentParticle = 0;
         spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
@@ -30,14 +31,22 @@ public class BloodClick : MonoBehaviour
             Instantiate(prefabs[currentParticle], mousePosition, Quaternion.identity);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetAxis("Mouse ScrollWheel") > 0f) // forward
         {
-            if (currentParticle < prefabs.Length - 1) {
-                currentParticle += 1;
-            } else
-            {
-                currentParticle = 0;
-            }
+            currentParticle++;
+        }
+        else if(Input.GetAxis("Mouse ScrollWheel") < 0f) // backwards
+        {
+            currentParticle--;
+        }
+
+        if (currentParticle < 0) // forward
+        {
+            currentParticle = prefabs.Length - 1;
+        }
+        else if (currentParticle > prefabs.Length - 1)
+        {
+            currentParticle = 0;
         }
 
         transform.position = mousePosition;

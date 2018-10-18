@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4446212281172290}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: flipPose
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 50841446508333144}
   - component: {fileID: 95487911361905572}
   - component: {fileID: 114712969445448588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
