@@ -18,12 +18,12 @@ public class BloodClick : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-
+        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         if (Input.GetMouseButtonDown(0))
         {
-            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            Vector2 spawnPosition = new Vector2((mousePosition.x-Screen.width/2) / 50, (mousePosition.y - Screen.height / 2) / 50);
+            Vector2 spawnPosition = new Vector2(mousePosition.x, mousePosition.y);
 
             Instantiate(prefabs[currentParticle], spawnPosition, Quaternion.identity);
         }
