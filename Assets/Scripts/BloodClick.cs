@@ -7,25 +7,27 @@ public class BloodClick : MonoBehaviour
 
     public GameObject[] prefabs;
 
-    private Vector3 mousePosition;
+    private Vector2 mousePosition;
 
     private int currentParticle;
 
+    SpriteRenderer spriteRenderer;
+
+    public Sprite[] sprites;
+
     // Use this for initialization
     void Start () {
-		
+        spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
         if (Input.GetMouseButtonDown(0))
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            Vector2 spawnPosition = new Vector2(mousePosition.x, mousePosition.y);
-
-            Instantiate(prefabs[currentParticle], spawnPosition, Quaternion.identity);
+            Instantiate(prefabs[currentParticle], mousePosition, Quaternion.identity);
         }
 
         if (Input.GetMouseButtonDown(1))
@@ -37,6 +39,10 @@ public class BloodClick : MonoBehaviour
                 currentParticle = 0;
             }
         }
+
+        transform.position = mousePosition;
+
+        spriteRenderer.sprite = sprites[currentParticle];
 
     }
 }
