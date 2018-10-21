@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private new Rigidbody2D rigidbody2D;
 
-    private CapsuleCollider2D capsuleCollider2D;
+    private BoxCollider2D capsuleCollider2D;
 
     private float horizontalMoveInput;
 
@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
-        capsuleCollider2D = GetComponent<CapsuleCollider2D>();
+        capsuleCollider2D = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -46,9 +46,7 @@ public class Player : MonoBehaviour
     {
         
             horizontalMoveInput = Input.GetAxisRaw("Horizontal");
-       
             transform.position = new Vector2(Mathf.Round(transform.position.x * 10) * 0.1f, Mathf.Round(transform.position.y * 10) * 0.1f);
-
             isGrounded = Physics2D.OverlapCircle(feetPose.position, radious, ground);
 
             animator.SetFloat("velocity", Mathf.Abs(horizontalMoveInput));
@@ -72,20 +70,10 @@ public class Player : MonoBehaviour
         transform.position = new Vector2(transform.position.x + force * transform.localScale.x *-1, transform.position.y);
     }*/
 
-    private void Flip()
-    {
-        if (horizontalMoveInput > 0 && facingRight || horizontalMoveInput < 0 && !facingRight)
-        {
-            facingRight = !facingRight;
-
-            Vector3 scale = transform.localScale;
-            scale.x *= -1;
-            transform.localScale = scale;
-        }
-    }
-
     private void FixedUpdate()
     {
+        //transform.position = new Vector2(transform.position.x + speed * horizontalMoveInput * Time.fixedDeltaTime, transform.position.y);
+
         if (!dead)
         {
             rigidbody2D.velocity = new Vector2(horizontalMoveInput * speed, rigidbody2D.velocity.y);
@@ -122,6 +110,18 @@ public class Player : MonoBehaviour
             rigidbody2D.freezeRotation = false;
             capsuleCollider2D.isTrigger = true;
             Knockback(5f, collision2D.gameObject.transform.position);
+        }
+    }
+
+    private void Flip()
+    {
+        if (horizontalMoveInput > 0 && facingRight || horizontalMoveInput < 0 && !facingRight)
+        {
+            facingRight = !facingRight;
+
+            Vector3 scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
         }
     }
 

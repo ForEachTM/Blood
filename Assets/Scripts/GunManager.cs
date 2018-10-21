@@ -4,147 +4,169 @@ using Random = UnityEngine.Random;
 
 public class GunManager : MonoBehaviour {
 
-    public GameObject playerPrefab;
-    public SpriteRenderer spriteRenderer;
-    public Sprite[] guns;
-    public GameObject[] bulletPrefabs;
+    Rocket Rocket;
+    Bullet Bullet;
 
-    BulletManager bulletManager;
-    Player player;
-    public CameraController cameraController;
+    GameObject Object;
 
-    public enum Guns { Nothing, Pistol, Revolver, Shotgun, TommyGun, Minigun, RocketLauncher, Mine };
+    CameraController CameraController;
 
-    Guns gun, randomGun;
+    SpriteRenderer SpriteRenderer;
+    public Sprite[] GunSprites;
+    public GameObject[] BulletPrefabs;
 
-    int bulletType;
+    public enum Guns { Pistol, Revolver, Shotgun, TommyGun, Minigun, RocketLauncher, Mine };
 
-    bool canShot;
+    Guns Gun, RandomGun;
 
-    float delayBetweenShots;
-    float delay;
-    float speed;
-    float knockback;
-    float dispersion;
-    float screenShake;
-    float lifetime;
+    int BulletType;
 
-    // Use this for initialization
+    bool CanShot;
+
+    Vector2 Velocity;
+
+    float LifeTime;
+
+    float KnockBack;
+    float ScreenShake;
+
+    float DelayBetweenShots;
+    float Delay;
+
     void Start () {
-        player = playerPrefab.GetComponent<Player>();
-        cameraController = FindObjectOfType<CameraController>();
+        CameraController = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraController>();
+
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+
+        CanShot = true;
     }
 
-    // Update is called once per frame
     void Update () {
-        if (delay <= 0)
+        if (Delay <= 0)
         {
-            canShot = true;
-            delay = delayBetweenShots;
+            CanShot = true;
+            Delay = DelayBetweenShots;
         }
         else
         {
-            delay -= Time.deltaTime;
+            Delay -= Time.deltaTime;
         }
 
         if (Input.GetKeyDown("u"))
         {
-            delayBetweenShots -= 0.1f;
+            DelayBetweenShots -= 0.1f;
         }
 	}
 
     void FixedUpdate()
     {
-        if (Input.GetButton("Fire1") && canShot && gun != Guns.Nothing)
+        if (Input.GetButton("Fire1") && CanShot)
         {
-            canShot = false;
+            CanShot = false;
 
-            cameraController.ShakeCamera(screenShake, 0);
+            CameraController.ShakeCamera(ScreenShake, 0.01f);
 
-            GameObject bullet = Instantiate(bulletPrefabs[bulletType], transform.position, Quaternion.identity);
+            Object = Instantiate(BulletPrefabs[BulletType], transform.position, Quaternion.identity);
 
-            /*bulletManager = bullet.GetComponent<BulletManager>();
-            bulletManager.SetSpeed(speed);
-            
-            bulletManager.SetLifeTime(lifetime);
-            bulletManager.SetDispersion(getDispersion());
-            bulletManager.SetBullet(bulletType);
-            bulletManager.Flip(player.facingRight);*/
-            //player.Knockback(knockback);
+            switch (BulletType)
+            {
+                case 0:
+                    Velocity.y = GetDispersion();
 
+                    Bullet = Object.gameObject.GetComponent<Bullet>();
+                    Bullet.SetLifeTime(LifeTime);
+                    Bullet.SetVelocity(Velocity);
+                    Bullet.Flip(transform.parent.localScale);
+                    break;
+
+                case 1:
+                    Bullet = Object.gameObject.GetComponent<Bullet>();
+                    Bullet.SetLifeTime(LifeTime);
+                    Bullet.SetVelocity(Velocity);
+                    Bullet.Flip(transform.parent.localScale);
+                    break;
+
+                case 2:
+                    Rocket = Object.gameObject.GetComponent<Rocket>();
+                    Rocket.SetLifeTime(LifeTime);
+                    Rocket.SetVelocity(Velocity);
+                    Rocket.Flip(transform.parent.localScale);
+                    break;
+            }
         }
     }
 
-    public float getDispersion()
+    public float GetDispersion()
     {
-        dispersion = 0;
-        switch (gun)
+        switch (Gun)
         {
-            case Guns.Shotgun: dispersion = Random.Range(-2f, 2f); break;
-            case Guns.TommyGun: dispersion = Random.Range(-2f, 2f); break;
-            case Guns.Minigun: dispersion = Random.Range(-6f, 6f); break;
+            case Guns.Shotgun: Velocity.y = Random.Range(-2f, 2f); break;
+            case Guns.TommyGun: Velocity.y = Random.Range(-2f, 2f); break;
+            case Guns.Minigun: Velocity.y = Random.Range(-6f, 6f); break;
         }
 
-        return dispersion;
+        return Velocity.y;
     }
 
-    public void SetGun(Guns gun)
+    public void SetGun(Guns Gun)
     {
-        this.gun = gun;
+        this.Gun = Gun;
 
-        spriteRenderer.sprite = guns[(int)gun];
+        SpriteRenderer.sprite = GunSprites[(int)Gun];
 
-        delay = 0;
-        knockback = 0;
-        speed = 30f;
-        delayBetweenShots = 0.3f;
-        lifetime = 2f;
-        screenShake = 0;
+        Velocity = Vector2.zero;
+        Delay = 0;
+        DelayBetweenShots = 0.3f;
+        LifeTime = 2f;
+        KnockBack = 0;
+        ScreenShake = 0;
 
-        switch (gun)
+        switch (Gun)
         {
             case Guns.Pistol:
-                bulletType = 0;
+                BulletType = 0;
+                Velocity.x = 30f;
                 break;
 
             case Guns.Revolver:
-                speed = 40f;
-                bulletType = 1;
-                screenShake = 10;
+                BulletType = 1;
+                Velocity.x = 40f;
+                ScreenShake = 10f;
                 break;
 
             case Guns.Shotgun:
-                knockback = 0.2f;
-                bulletType = 0;
-                lifetime = 0.2f;
-                screenShake = 10;
+                BulletType = 0;
+                Velocity.x = 20f;
+                LifeTime = 0.2f;
+                KnockBack = 0.2f;
+                ScreenShake = 10f;
                 break;
 
             case Guns.TommyGun:
-                speed = 30f;
-                delayBetweenShots = 0.05f;
-                knockback = 0.5f;
-                bulletType = 0;
-                screenShake = 8;
+                BulletType = 0;
+                DelayBetweenShots = 0.05f;
+                Velocity.x = 30f;
+                KnockBack = 0.5f;
+                ScreenShake = 8f;
                 break;
 
             case Guns.Minigun:
-                speed = 30f;
-                delayBetweenShots = 0.01f;
-                knockback = 0.3f;
-                bulletType = 0;
-                screenShake = 10;
+                BulletType = 0;
+                DelayBetweenShots = 0.01f;
+                Velocity.x = 30f;
+                KnockBack = 0.3f;
+                ScreenShake = 10f;
                 break;
 
             case Guns.RocketLauncher:
-                speed = 10f;
-                delayBetweenShots = 1f;
-                bulletType = 2;
+                BulletType = 2;
+                DelayBetweenShots = 1f;
+                Velocity.x = 10f;
                 break;
 
             case Guns.Mine:
-                delayBetweenShots = 4f;
-                bulletType = 3;
+                BulletType = 3;
+                DelayBetweenShots = 4f;
                 break;
 
         }
@@ -152,12 +174,12 @@ public class GunManager : MonoBehaviour {
 
     public void SetRandomGun()
     {
-        while (randomGun == gun || randomGun == Guns.Shotgun || randomGun == Guns.Mine) { 
-            randomGun = (Guns)Random.Range(1, Enum.GetNames(typeof(Guns)).Length);
+        while (RandomGun == Gun || RandomGun == Guns.Shotgun || RandomGun == Guns.Mine) {
+            RandomGun = (Guns)Random.Range(0, Enum.GetNames(typeof(Guns)).Length);
         }
 
-        SetGun(randomGun);
+        SetGun(RandomGun);
 
-        gun = randomGun;
+        Gun = RandomGun;
     }
 }

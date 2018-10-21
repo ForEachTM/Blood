@@ -65,8 +65,6 @@ public class Enemy : MonoBehaviour {
 
     public void Knockback(float knockback, Vector3 position)
     {
-        dead = true;
-
         rigidbody2D.freezeRotation = false;
         boxCollider2D.isTrigger = true;
 
@@ -78,20 +76,7 @@ public class Enemy : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if (!dead)
-        {
-            rigidbody2D.velocity = new Vector2(speed, rigidbody2D.velocity.y);
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision2D)
-    {
-        if (collision2D.gameObject.tag.Equals("Explosion"))
-        {
-            rigidbody2D.freezeRotation = false;
-            boxCollider2D.isTrigger = true;
-            Knockback(5f, collision2D.gameObject.transform.position);
-        }
+        transform.position = new Vector2(transform.position.x + speed * Time.fixedDeltaTime, transform.position.y);
     }
 
     public void AddSmoke()
@@ -104,11 +89,10 @@ public class Enemy : MonoBehaviour {
     {
         if (collider2D.gameObject.tag.Equals("Explosion"))
         {
+            dead = true;
             AddSmoke();
             Knockback(20f, collider2D.gameObject.transform.position);
         }
-
-        Debug.Log(collider2D.gameObject.tag);
 
         if (collider2D.gameObject.tag.Equals("Bullet"))
         {
@@ -123,17 +107,6 @@ public class Enemy : MonoBehaviour {
             }
 
         }
-        /*if (collider2D.gameObject.tag.Equals("MapCollider"))
-        {
-            boxCollider2D.isTrigger = false;
-        }
-
-        if (collider2D.gameObject.tag.Equals("Explosion"))
-        {
-            rigidbody2D.freezeRotation = false;
-            boxCollider2D.isTrigger = true;
-            Knockback(20f, collider2D.gameObject.transform.position);
-        }*/
     }
 
     public void SetAngry()

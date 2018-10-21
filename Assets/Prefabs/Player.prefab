@@ -4894,12 +4894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2477a242736c8cd4093f2a6fb845fcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1715289659026758, guid: cbca6c827cf176e469121b50871f1896,
-    type: 3}
-  playerPrefab: {fileID: 1447425492297600}
-  spriteRenderer: {fileID: 212470679289913690}
-  guns:
-  - {fileID: 0}
+  GunSprites:
   - {fileID: 21300006, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300008, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300002, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
@@ -4907,7 +4902,10 @@ MonoBehaviour:
   - {fileID: 21300022, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300004, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300024, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
-  cameraController: {fileID: 0}
+  BulletPrefabs:
+  - {fileID: 2596602062575571302, guid: dd99d0d7688eb91459732b5256561fe8, type: 3}
+  - {fileID: 1715289659026758, guid: cbca6c827cf176e469121b50871f1896, type: 3}
+  - {fileID: 5039531129004654835, guid: 89af5f2a395da3941a7362a9085ebe94, type: 3}
 --- !u!1 &1447425492297600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4922,7 +4920,8 @@ GameObject:
   - component: {fileID: 114792419376232466}
   - component: {fileID: 70421373293165498}
   - component: {fileID: 95920288352579400}
-  m_Layer: 0
+  - component: {fileID: 1447426993094213}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -5073,3 +5072,29 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!61 &1447426993094213
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447425492297600}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.44444445, y: 0.5}
+    oldSize: {x: 0.9, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.8, y: 0.9}
+  m_EdgeRadius: 0

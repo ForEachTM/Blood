@@ -2,17 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class Bullet : IBullet
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        Rigidbody2D = GetComponent<Rigidbody2D>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, LifeTime);
+    }
+
+    void FixedUpdate()
+    {
+        Rigidbody2D.velocity = Velocity;
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        tag = collision.gameObject.tag;
+        if (tag == "Enemy" || tag == "MapCollider")
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public override void Flip(Vector2 Scale)
+    {
+        SetVelocity(Velocity * Scale);
     }
 }

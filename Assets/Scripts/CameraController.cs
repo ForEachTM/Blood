@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour {
 
-    float shakeTimer, shakeAmount;
+    float ShakeTimer, ShakeAmount;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
 
-        if (shakeTimer >= 0)
+        if (ShakeTimer > 0)
         {
-            Vector2 shakePosition = Random.insideUnitCircle * shakeAmount * Time.deltaTime;
-            transform.position = new Vector3(transform.position.x + shakePosition.x, transform.position.y + shakePosition.y/2, transform.position.z);
+            Vector2 shakePosition = Random.insideUnitCircle * ShakeAmount * Time.deltaTime;
+            transform.position = new Vector3(transform.position.x + shakePosition.x, transform.position.y + shakePosition.y / 2, transform.position.z);
 
-            shakeTimer -= Time.deltaTime;
+            ShakeTimer -= Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 0, transform.position.z), 0.1f);
         }
         else
         {
@@ -28,9 +23,16 @@ public class CameraController : MonoBehaviour {
 
 	}
 
-    public void ShakeCamera(float shakePower, float shakeDuration)
+    public void ShakeCamera(float ShakePower, float ShakeDuration)
     {
-        shakeTimer = shakeDuration;
-        shakeAmount = shakePower;
-    } 
+        ShakeTimer = ShakeDuration;
+        ShakeAmount = ShakePower;
+    }
+
+    public void Shake(float ShakePower)
+    {
+        Vector2 ShakePosition = Random.insideUnitCircle * ShakePower * Time.deltaTime;
+        transform.position = new Vector3(transform.position.x + ShakePosition.x, transform.position.y + ShakePosition.y / 2, transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, new Vector3(0, 0, transform.position.z), 0.1f);
+    }
 }
