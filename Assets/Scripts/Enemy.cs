@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour {
 
     public Animator animator;
 
+    public int lives;
+
     const float radious = 0.01f;
 
     public float speed;
@@ -23,6 +25,7 @@ public class Enemy : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        lives = 3;
         rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
     }
@@ -31,7 +34,9 @@ public class Enemy : MonoBehaviour {
 	void Update () {
         flip = Physics2D.OverlapCircle(feetPose.position, radious, ground);
 
-        if(transform.position.y <= -10 && !dead)
+        transform.position = new Vector2(Mathf.Round(transform.position.x * 10) * 0.1f, Mathf.Round(transform.position.y * 10) * 0.1f);
+
+        if (transform.position.y <= -10 && !dead)
         {
             SetAngry();
             transform.position = new Vector2(-10,10);
@@ -61,6 +66,9 @@ public class Enemy : MonoBehaviour {
     public void Knockback(float knockback, Vector3 position)
     {
         dead = true;
+
+        rigidbody2D.freezeRotation = false;
+        boxCollider2D.isTrigger = true;
 
         Vector2 moveDirection = transform.position - position;
 
@@ -97,9 +105,23 @@ public class Enemy : MonoBehaviour {
         if (collider2D.gameObject.tag.Equals("Explosion"))
         {
             AddSmoke();
-            rigidbody2D.freezeRotation = false;
-            boxCollider2D.isTrigger = true;
             Knockback(20f, collider2D.gameObject.transform.position);
+        }
+
+        Debug.Log(collider2D.gameObject.tag);
+
+        if (collider2D.gameObject.tag.Equals("Bullet"))
+        {
+
+            if (lives <= 0)
+            {
+                Knockback(20f, collider2D.gameObject.transform.position);
+            }
+            else
+            {
+                lives--;
+            }
+
         }
         /*if (collider2D.gameObject.tag.Equals("MapCollider"))
         {

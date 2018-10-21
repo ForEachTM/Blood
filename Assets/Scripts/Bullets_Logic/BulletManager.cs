@@ -8,6 +8,8 @@ public class BulletManager : MonoBehaviour {
     public SpriteRenderer spriteRenderer;
     public Sprite[] bullets;
 
+    CameraController cameraController;
+
     Rigidbody2D rigidbody2D;
 
     BoxCollider2D boxCollider2D;
@@ -27,6 +29,7 @@ public class BulletManager : MonoBehaviour {
     {
         rigidbody2D = GetComponent<Rigidbody2D>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        cameraController = FindObjectOfType<CameraController>();
     }
 
     // Update is called once per frame
@@ -54,6 +57,7 @@ public class BulletManager : MonoBehaviour {
             {
                 smoke.transform.parent = null;
                 Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+                cameraController.ShakeCamera(10,0.3f);
             }
 
             if(bullet == Bullets.Mine && tag.Equals("Enemy"))

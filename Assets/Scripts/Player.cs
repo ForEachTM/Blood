@@ -44,8 +44,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
             horizontalMoveInput = Input.GetAxisRaw("Horizontal");
-
+       
             transform.position = new Vector2(Mathf.Round(transform.position.x * 10) * 0.1f, Mathf.Round(transform.position.y * 10) * 0.1f);
 
             isGrounded = Physics2D.OverlapCircle(feetPose.position, radious, ground);
