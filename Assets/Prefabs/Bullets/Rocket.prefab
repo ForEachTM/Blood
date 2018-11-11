@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 3584155155236587943}
   m_Layer: 0
   m_Name: Rocket
-  m_TagString: Bullet
+  m_TagString: Rocket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 617374771
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
+  m_Sprite: {fileID: 21300010, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -148,11 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691496818c231e74aa2bfbefd33cc81f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody2D: {fileID: 0}
-  SpriteRenderer: {fileID: 0}
-  Velocity: {x: 0, y: 0}
-  LifeTime: 0
-  Explosion: {fileID: 1224368266968262, guid: 32ecff4d8b155e74d8b2ec0b4800faa2, type: 3}
+  explosion: {fileID: 1224368266968262, guid: 32ecff4d8b155e74d8b2ec0b4800faa2, type: 3}
 --- !u!1001 &2663393419085801753
 PrefabInstance:
   m_ObjectHideFlags: 0

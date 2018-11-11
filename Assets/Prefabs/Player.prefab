@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4362652507925120}
   m_Layer: 0
-  m_Name: feetPose
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4868,15 +4868,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 335178091
-  m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.8, y: 0.5}
+  m_Size: {x: 1.1, y: 0.6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -4894,18 +4894,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2477a242736c8cd4093f2a6fb845fcf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 0}
   GunSprites:
   - {fileID: 21300006, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300008, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300002, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300000, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
-  - {fileID: 21300022, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
+  - {fileID: 21300018, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   - {fileID: 21300004, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
-  - {fileID: 21300024, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
+  - {fileID: 21300012, guid: b52f872bec40314468a3b4728171d4fb, type: 3}
   BulletPrefabs:
   - {fileID: 2596602062575571302, guid: dd99d0d7688eb91459732b5256561fe8, type: 3}
   - {fileID: 1715289659026758, guid: cbca6c827cf176e469121b50871f1896, type: 3}
+  - {fileID: 6393400141691819050, guid: 5830548b010ce784d95c2b6f825674c8, type: 3}
   - {fileID: 5039531129004654835, guid: 89af5f2a395da3941a7362a9085ebe94, type: 3}
+  - {fileID: 5931233243902868821, guid: 6b039c782fbc01e48896c0456679cd76, type: 3}
 --- !u!1 &1447425492297600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4920,8 +4923,7 @@ GameObject:
   - component: {fileID: 114792419376232466}
   - component: {fileID: 70421373293165498}
   - component: {fileID: 95920288352579400}
-  - component: {fileID: 1447426993094213}
-  m_Layer: 10
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -4942,6 +4944,7 @@ Transform:
   - {fileID: 4362652507925120}
   - {fileID: 4455015992037716}
   - {fileID: 4160828372536304}
+  - {fileID: 5689805469152029458}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5026,17 +5029,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 593d5a17660449a4c9f6802c328fa206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunManager: {fileID: 114500123024071200}
+  spriteRenderer: {fileID: 212191392815938776}
+  rigidbody2D: {fileID: 0}
   animator: {fileID: 95920288352579400}
-  jumpTime: 0
-  jumpForce: 25
-  speed: 12
-  feetPose: {fileID: 4362652507925120}
+  dummyPrefab: {fileID: 8787096842155407377, guid: 1498d21b4591af742b90dbe3a1c4189c,
+    type: 3}
   ground:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
+  isCircleCollided: 0
   facingRight: 0
-  spriteRenderer: {fileID: 212191392815938776}
+  speed: 12.5
+  jumpForce: 25
+  gameOverPanel: {fileID: 0}
+  scoreText: {fileID: 0}
 --- !u!70 &70421373293165498
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5050,8 +5056,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 1}
+  m_Offset: {x: 0, y: -0.05}
+  m_Size: {x: 0.8, y: 0.9}
   m_Direction: 0
 --- !u!95 &95920288352579400
 Animator:
@@ -5072,29 +5078,73 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!61 &1447426993094213
+--- !u!1 &1911627708939243232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5689805469152029458}
+  - component: {fileID: 323658513706564309}
+  - component: {fileID: 1911627708939243233}
+  m_Layer: 8
+  m_Name: PlayerCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5689805469152029458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911627708939243232}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4996334680320608}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &323658513706564309
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1447425492297600}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1911627708939243232}
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.44444445, y: 0.5}
-    oldSize: {x: 0.9, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.9}
+  m_Size: {x: 0.8, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1911627708939243233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1911627708939243232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba10e121a810a3545952852819f7f9ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

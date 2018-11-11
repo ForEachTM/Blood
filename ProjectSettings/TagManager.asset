@@ -9,6 +9,14 @@ TagManager:
   - MapCollider
   - Enemy
   - Bullet
+  - Rocket
+  - MenuOptions
+  - Selection
+  - OptionsOptions
+  - Options
+  - Menu
+  - Arrows
+  - DeathZone
   layers:
   - Default
   - TransparentFX
@@ -18,9 +26,9 @@ TagManager:
   - UI
   - 
   - 
+  - TriggerColliders
+  - PhysicsColliders
   - Ground
-  - 
-  - 
   - 
   - 
   - 

@@ -515,6 +515,18 @@
         <para>If in progress, halts the UnityWebRequest as soon as possible.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.ClearCookieCache">
+      <summary>
+        <para>Clears stored cookies from the cache.</para>
+      </summary>
+      <param name="domain">An optional URL to define which cookies are removed. Only cookies that apply to this URL will be removed from the cache.</param>
+    </member>
+    <member name="M:UnityEngine.Networking.UnityWebRequest.ClearCookieCache">
+      <summary>
+        <para>Clears stored cookies from the cache.</para>
+      </summary>
+      <param name="domain">An optional URL to define which cookies are removed. Only cookies that apply to this URL will be removed from the cache.</param>
+    </member>
     <member name="M:UnityEngine.Networking.UnityWebRequest.#ctor">
       <summary>
         <para>Creates a UnityWebRequest with the default options and no attached DownloadHandler or UploadHandler. Default method is GET.</para>

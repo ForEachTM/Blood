@@ -312,6 +312,14 @@ See Also: CanvasRenderer.EnableRectClipping, CanvasRenderer.DisableRectClipping.
         <para>Get the current color of the renderer.</para>
       </summary>
     </member>
+    <member name="M:UnityEngine.CanvasRenderer.GetInheritedAlpha">
+      <summary>
+        <para>Get the final inherited alpha calculated by including all the parent alphas from included parent CanvasGroups.</para>
+      </summary>
+      <returns>
+        <para>The calculated inherited alpha.</para>
+      </returns>
+    </member>
     <member name="M:UnityEngine.CanvasRenderer.GetMaterial(System.Int32)">
       <summary>
         <para>Gets the current Material assigned to the CanvasRenderer.</para>

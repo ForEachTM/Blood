@@ -178,43 +178,53 @@
     </member>
     <member name="T:UnityEngine.Analytics.AnalyticsSessionInfo">
       <summary>
-        <para>Accesses for Analytics session information (common for all game instances).</para>
+        <para>Provides access to the Analytics session information for the current game instance.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionCount">
+      <summary>
+        <para>The number of sessions played since the app was installed.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionElapsedTime">
       <summary>
-        <para>Session time since the begining of player game session.</para>
+        <para>The time elapsed, in milliseconds, since the beginning of the current game session.</para>
+      </summary>
+    </member>
+    <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionFirstRun">
+      <summary>
+        <para>Reports whether the current session is the first session since the player installed the game or application.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionId">
       <summary>
-        <para>Session id is used for tracking player game session.</para>
+        <para>A random, unique GUID identifying the current game or app session.</para>
       </summary>
     </member>
     <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.sessionState">
       <summary>
-        <para>Session state.</para>
+        <para>The current state of the session.</para>
       </summary>
     </member>
     <member name="?:UnityEngine.Analytics.AnalyticsSessionInfo.sessionStateChanged(UnityEngine.Analytics.AnalyticsSessionInfo/SessionStateChanged)">
       <summary>
-        <para>This event occurs when a Analytics session state changes.</para>
+        <para>Dispatched when the Analytics session state changes.</para>
       </summary>
       <param name="value"></param>
     </member>
     <member name="P:UnityEngine.Analytics.AnalyticsSessionInfo.userId">
       <summary>
-        <para>UserId is random GUID to track a player and is persisted across game session.</para>
+        <para>A random GUID uniquely identifying sessions played on the same instance of your game or app.</para>
       </summary>
     </member>
     <member name="T:UnityEngine.Analytics.AnalyticsSessionInfo.SessionStateChanged">
       <summary>
-        <para>This event occurs when a Analytics session state changes.</para>
+        <para>Dispatched when the Analytics session state changes.</para>
       </summary>
       <param name="sessionState">Current session state.</param>
       <param name="sessionId">Current session id.</param>
-      <param name="sessionElapsedTime">Game player current session time.</param>
-      <param name="sessionChanged">Set to true when sessionId has changed.</param>
+      <param name="sessionElapsedTime">Length of the current session in milliseconds.</param>
+      <param name="sessionChanged">True, if the sessionId has changed; otherwise false.</param>
     </member>
     <member name="T:UnityEngine.Analytics.AnalyticsSessionState">
       <summary>

@@ -20,6 +20,8 @@ TextureImporter:
     21300030: small_enemy_sprites_15
     21300032: small_enemy_sprites_16
     21300034: small_enemy_sprites_17
+    21300036: small_enemy_sprites_18
+    21300038: small_enemy_sprites_19
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -105,18 +107,18 @@ TextureImporter:
       name: small_enemy_sprites_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 19
-        width: 9
+        x: 1
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 885cba2f20c8eb74d99fae7864f2fa1f
+      spriteID: 7ac88c3c47ebc7d458c46e3dcde9ea42
       vertices: []
       indices: 
       edges: []
@@ -125,18 +127,18 @@ TextureImporter:
       name: small_enemy_sprites_1
       rect:
         serializedVersion: 2
-        x: 9
-        y: 19
-        width: 9
+        x: 11
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b877c09487e0a7b4e828989878079e3a
+      spriteID: 54c6b8e950668e3448b11b5764e87995
       vertices: []
       indices: 
       edges: []
@@ -145,18 +147,18 @@ TextureImporter:
       name: small_enemy_sprites_2
       rect:
         serializedVersion: 2
-        x: 18
-        y: 19
-        width: 9
+        x: 21
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa51a500e3fd2340bf60a91216da9ad
+      spriteID: 656308393fa35b7408f686e9c654211a
       vertices: []
       indices: 
       edges: []
@@ -165,18 +167,18 @@ TextureImporter:
       name: small_enemy_sprites_3
       rect:
         serializedVersion: 2
-        x: 27
-        y: 19
-        width: 9
+        x: 31
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4870b21ef0d99ed459d8e8359cbf239b
+      spriteID: d29e08a3150ea30449fdbd1dce7a6ebd
       vertices: []
       indices: 
       edges: []
@@ -185,18 +187,18 @@ TextureImporter:
       name: small_enemy_sprites_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 19
-        width: 9
+        x: 41
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 541853c461ecb0b4283b270d0a0f2bd4
+      spriteID: 2f7ebe9a9aa60d74487ba88da5db3ede
       vertices: []
       indices: 
       edges: []
@@ -205,18 +207,18 @@ TextureImporter:
       name: small_enemy_sprites_5
       rect:
         serializedVersion: 2
-        x: 45
-        y: 19
-        width: 9
+        x: 51
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f209a72fb9b8e744b1999078e0deaf0
+      spriteID: bfae657b253e11740a57ad81af0a531e
       vertices: []
       indices: 
       edges: []
@@ -225,18 +227,18 @@ TextureImporter:
       name: small_enemy_sprites_6
       rect:
         serializedVersion: 2
-        x: 54
-        y: 19
-        width: 9
+        x: 61
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3090cbe8b7083ca41bb5df4cb287669a
+      spriteID: 3b294346fd0a1d74eac358f07ccd97dd
       vertices: []
       indices: 
       edges: []
@@ -245,18 +247,18 @@ TextureImporter:
       name: small_enemy_sprites_7
       rect:
         serializedVersion: 2
-        x: 63
-        y: 19
-        width: 9
+        x: 71
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c83308ed4049a746a0516fe405ba16f
+      spriteID: e1e18b8310f53a74590e96491245fe6c
       vertices: []
       indices: 
       edges: []
@@ -265,18 +267,18 @@ TextureImporter:
       name: small_enemy_sprites_8
       rect:
         serializedVersion: 2
-        x: 72
-        y: 19
-        width: 9
+        x: 81
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58fc8b8f5baa92344ba03c38ab53b2cd
+      spriteID: 08c443dab65774a4f86ee4f38b06e86b
       vertices: []
       indices: 
       edges: []
@@ -285,18 +287,18 @@ TextureImporter:
       name: small_enemy_sprites_9
       rect:
         serializedVersion: 2
-        x: 81
-        y: 19
-        width: 9
+        x: 91
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52e7ab4ede62d7b428606a9015ae04ae
+      spriteID: 6f3c13cef435bca42893177dfe0f153a
       vertices: []
       indices: 
       edges: []
@@ -305,18 +307,18 @@ TextureImporter:
       name: small_enemy_sprites_10
       rect:
         serializedVersion: 2
-        x: 90
-        y: 19
-        width: 9
+        x: 101
+        y: 21
+        width: 10
         height: 10
-      alignment: 9
-      pivot: {x: 0.5555556, y: 0.5}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0db2e5e6d3973a447b602d3e2366eed3
+      spriteID: 8b7ff1a9f0133134e83a25fba6598cd2
       vertices: []
       indices: 
       edges: []
@@ -325,18 +327,18 @@ TextureImporter:
       name: small_enemy_sprites_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 1
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 293c3b648ac68614e8b06e012944fa4f
+      spriteID: 486d205679b22164aaad63b8562f6e4f
       vertices: []
       indices: 
       edges: []
@@ -345,18 +347,18 @@ TextureImporter:
       name: small_enemy_sprites_12
       rect:
         serializedVersion: 2
-        x: 9
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.33333334, y: 0.5}
+        x: 11
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4ab428abcc1ec34cb090f7dbf94f670
+      spriteID: 572a144cbcb8a9d47a84d9ba2f5004a4
       vertices: []
       indices: 
       edges: []
@@ -365,18 +367,18 @@ TextureImporter:
       name: small_enemy_sprites_13
       rect:
         serializedVersion: 2
-        x: 18
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 21
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40222aaa20ef6b54dabcc7e2e8f3c907
+      spriteID: 721ef1e55d951bf45b62e42542167d7e
       vertices: []
       indices: 
       edges: []
@@ -385,18 +387,18 @@ TextureImporter:
       name: small_enemy_sprites_14
       rect:
         serializedVersion: 2
-        x: 27
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 31
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9d32e74b337537449ccf7b909af5064
+      spriteID: 1308ebc86c290e944b04d18d06daf814
       vertices: []
       indices: 
       edges: []
@@ -405,18 +407,18 @@ TextureImporter:
       name: small_enemy_sprites_15
       rect:
         serializedVersion: 2
-        x: 36
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 41
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41533c673cd7bae468d4605ec95daab7
+      spriteID: 1faba862ba156604892b18d2fec50528
       vertices: []
       indices: 
       edges: []
@@ -425,18 +427,18 @@ TextureImporter:
       name: small_enemy_sprites_16
       rect:
         serializedVersion: 2
-        x: 45
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 51
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b373a150ff16ac4f9683987451370e7
+      spriteID: 044dd91b886fb1040ab7710ab0d3bf29
       vertices: []
       indices: 
       edges: []
@@ -445,18 +447,58 @@ TextureImporter:
       name: small_enemy_sprites_17
       rect:
         serializedVersion: 2
-        x: 54
-        y: 9
-        width: 9
-        height: 10
-      alignment: 9
-      pivot: {x: 0.44444445, y: 0.5}
+        x: 61
+        y: 11
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea6274bb973c6e6449d6f6de0c0d621a
+      spriteID: a2e635a7ab8fc7a489cb23abc30bdbf4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_enemy_sprites_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c2f2053e5fa07944b89b905fefb20b1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: small_enemy_sprites_19
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 1
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35e1c257f8d677439f9c07d355a51d7
       vertices: []
       indices: 
       edges: []
